@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="col-lg-6 col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+				<div class="pull-right">
+					<a href="timelining.php" type="button" class="btn btn-primary btn-xs">View Details</a>
+				</div>
+			</div>
+			<div class="panel-body">
+				<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1ArK6EUkE2pVSFSCxS0ZkJXrOSSO3vT6OuK4NZhtG1Zo&font=Default&lang=en&initial_zoom=2&height=400' width='100%' height='400' frameborder='0'></iframe>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-map-marker fa-fw"></i> Geolocalization
+				<div class="pull-right">
+					<a href="geolocalization.php" type="button" class="btn btn-primary btn-xs">View Details</a>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="container2">
+					<div id="map-place" style="width: 100%;height: 400px;margin: 0;padding: 1px;"></div>
+				</div>
+			<script type="text/javascript">
+				var mymap = L.map('map-place').setView([51.505, -0.09], 13);
+	
+				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+				}).addTo(mymap);
+				
+				L.marker([51.5, -0.09]).addTo(mymap)
+				.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+				//.openPopup();
+				;
+			</script>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6 col-md-6">
+		<div class="panel panel-default clustering-panel">
+			<div class="panel-heading">
+				<i class="fa fa-th-large fa-fw"></i>Clustering
+				<div class="pull-right">
+					<a href="clustering.php" type="button" class="btn btn-primary btn-xs">View Details</a>
+				</div>
+			</div>
+			<div class="panel-body">
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-tasks fa-fw"></i>List of Documents
+				<div class="pull-right">
+					<a href="documents.php" type="button" class="btn btn-primary btn-xs">View Details</a>
+				</div>
+			</div>
+		<div class="panel-body">
+	</div>
+</div>
+

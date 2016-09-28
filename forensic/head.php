@@ -17,5 +17,13 @@
     <script src="app/collection-detail/collection-detail.component.js"></script>
     <script src="app/app.js"></script>
     <script src="app/app.config.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+    <link href="css/clusteringtable.css" rel="stylesheet">
+    <link href="css/timeline.css" rel="stylesheet">
+
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
 </head>
 

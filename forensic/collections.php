@@ -20,7 +20,7 @@ require_once("sidebar.php");
 require_once("header.php");
 ?>
   <div class="row">
-    <div class="col-md-3" style="width:25%;margin:0px;border-width:2px;border-style: solid;">
+    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
                                 <h4 class="pull-right"><i class="fa fa-plus-square-o"></i></h4>
                                 <h4><a href="newCollection.php">Add New Collection</a></h4>
                                 <p>In order to create / add a new collection click at <a href="newCollection.php">Create New Collection</a>.</p>
@@ -67,7 +67,7 @@ require_once("header.php");
 			$notpro = $obj->counts->NOT_PROCESSED;
 
 ?>
-    <div class="col-md-3" style="width:25%;margin:0px;border-width:2px;border-style: solid;">
+    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
                             <div class="caption">
                                 <!--<h4 class="pull-right">$24.99</h4>-->
                                 <h4><a href="collectionDetail.php?collectionId=<?php echo $cn; ?>"><?php echo $cn; ?></a></h4>
@@ -86,7 +86,7 @@ require_once("header.php");
 			$cn = $obj->collectionName;
 			$ci = $obj->collectionId;
 ?>
-    <div class="col-md-3" style="width:25%;margin:0px;border-width:2px;border-style: solid;">
+    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
                             <div class="caption">
                                 <!--<h4 class="pull-right">$24.99</h4>-->
                                 <h4><a href="collectionDetail.php?collectionId=<?php echo $cn; ?>"><?php echo $cn; ?></a></h4>

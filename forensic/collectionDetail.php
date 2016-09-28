@@ -2,8 +2,9 @@
 	$siteName = 'collections';
 	$siteTitle = 'Collections - Information Forensics';
 	require_once('lib2.php');
-	require_once("head.php");
 
+	$userId = getSession('forensicUser','');
+        $user = getSession("forensicUser","");
 	$collectionId = getForm('collectionId','');
 	if($collectionId!=''){
 		setSession('forensicCollectionId',$collectionId);
@@ -15,13 +16,16 @@
 		header('location: collections.php');
 		exit(0);
 	}
+	require_once("head.php");
 ?>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="docView.js"></script>
+<script src="serviceCalls.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	var url = 'http://dev.digitale-kuratierung.de/forensic/';
+	var url = 'http://dev.digitale-kuratierung.de/forin/forensic/';
 
         $('#collectionMenuList li a').click(function(e) { 
                 $('body').addClass("loading");
@@ -31,47 +35,15 @@ $(document).ready(function() {
                 var userId = '<?php echo $userId;?>';
                 var content = '';
                 var urlPath = '';
-                if($(this).attr('id')=='dashboard'){
-                        urlPath = '';
-                }
-                else if($(this).attr('id')=='clustering'){
-                        urlPath = 'clustering';
-                }
-                else if($(this).attr('id')=='documents'){
-                        urlPath = 'listDocuments';
-                }
-                else if($(this).attr('id')=='map'){
-                        urlPath = 'geolocalization';
-                }
-                else if($(this).attr('id')=='timeline'){
-                        urlPath = 'timelining';
-                }
-                else if($(this).attr('id')=='semanticexploration'){
-                        urlPath = 'semanticexploration';
-                }
-                alert('success');
-                var posting = $.post( 'http://dev.digitale-kuratierung.de/api/e-parrot/'+collectionName+'/'+urlPath, { user: userId } );
-                posting.done(function( data ) {
-                        alert(data);
-                //      $('#main-content').empty(); 
-                //      $('#main-content').load(url + 'collectionViews/' + collectionName + "_" + $(this).attr('id') + '.html'); 
-                $('#main-content-content').html(data); 
-                });
-                posting.fail(function(xhr,status,error){
-                        alert(status);
-                        //alert(error);
-                });
-                //alert('success2');
+		callListDocuments($(this).attr('id'),collectionName,userId);
+//              alert('success');
                 $('#main-content').empty(); 
-                //$('#main-content').load(url + 'collectionViews/' + collectionName + "_" + $(this).attr('id') + '_error.html'); 
-                //alert(href);
                 $('#main-content').load(href);
-                //alert(content); 
-                //$('#main-content-content').html(content); 
-                $('body').removeClass("loading");
+//                $('body').removeClass("loading");
         });
 
-	$('#main-content').load('http://dev.digitale-kuratierung.de/forensic/dashboard.html');
+//	document.getElementById('dashboard').click();
+	$('#main-content').load('http://dev.digitale-kuratierung.de/forin/forensic/dashboard.html');
 });
 </script>
 

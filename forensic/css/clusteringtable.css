@@ -1,0 +1,218 @@
+/*
+Inspired by the dribble shot http://dribbble.com/shots/1285240-Freebie-Flat-Pricing-Table?list=tags&tag=pricing_table
+*/
+
+/*--------- Font ------------*/
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*font-size: 100%;*/
+/*    font: inherit;*/
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*------ utiltity classes -----*/
+.clustering-panel .fl{ float:left; }
+.clustering-panel .fr{ float: right; }
+/*its also known as clearfix*/
+.clustering-panel .group:before,
+.clustering-panel .group:after {
+    content: "";
+    display: table;
+} 
+.clustering-panel .group:after {
+    clear: both;
+}
+.clustering-panel .group {
+    zoom: 1;  /*For IE 6/7 (trigger hasLayout) */
+}
+
+body {
+    background: #F2F2F2;
+    font-family: 'Droid Sans', sans-serif;
+    line-height: 1;
+ /*   font-size: 16px;    */
+}
+.clustering-panel .wrapper {
+    
+}
+.clustering-panel .pricing-table {
+    width: 100%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 5px;
+    padding-right: 0;
+}
+.clustering-panel .pricing-table .heading{
+    color: #9C9E9F;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.clustering-panel .block{
+/*    width: 8%;   */
+    margin: 0 5px;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+/*    border: 1px solid red;*/
+}
+
+.clustering-panel .block1 { width:97.0%; }
+.clustering-panel .block2 { width:47.0%; }
+.clustering-panel .block3 { width:31.3%; }
+.clustering-panel .block4 { width:23.0%; }
+.clustering-panel .block5 { width:18.0%; }
+.clustering-panel .block6 { width:14.6%; }
+.clustering-panel .block7 { width:12.2%; }
+.clustering-panel .block8 { width:10.5%; }
+.clustering-panel .block9 { width:19.1%; }
+.clustering-panel .block10 { width:8.0%; }
+
+/*Shared properties*/
+.clustering-panel .title,.clustering-panel .pt-footer{
+    color: #FEFEFE;
+    text-transform: capitalize;
+    line-height: 2.5;
+    position: relative;
+}
+.clustering-panel .content{
+    position: relative;
+    color: #FEFEFE;
+    padding: 20px 0 10px 0;
+}
+/*arrow creation*/
+.clustering-panel .content:after, .clustering-panel .content:before,.clustering-panel .pt-footer:before,.clustering-panel .pt-footer:after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.clustering-panel .pt-footer:after,.clustering-panel .pt-footer:before{
+    top:0;
+}
+.clustering-panel .content:after,.clustering-panel .pt-footer:after {
+	border-color: rgba(136, 183, 213, 0);	
+	border-width: 5px;
+	margin-left: -5px;
+}
+/*/arrow creation*/
+.clustering-panel .price{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.625rem;
+}
+.clustering-panel .price span{    
+    font-size: 6rem;
+    letter-spacing: 8px;
+    font-weight: bold;        
+}
+.clustering-panel .price sup{
+    font-size: 1.5rem;    
+    position: absolute;    
+    top: 12px;
+    left: -12px;
+}
+.clustering-panel .hint{
+    font-style: italic;
+    font-size: 0.9rem;
+}
+.clustering-panel .features{
+    list-style-type: none;    
+    background: #FFFFFF;
+    text-align: left;
+    color: #9C9C9C;
+    padding:30px 22%;
+    font-size: 2rem;
+}
+.clustering-panel .features li{
+    padding:15px 0;
+    width: 100%;
+}
+.clustering-panel .features li span{
+   padding-right: 0.4rem; 
+}
+.clustering-panel .pt-footer{
+    font-size: 0.95rem;
+    text-transform: capitalize;
+}
+/*PERSONAL*/
+.clustering-panel .personal .title{        
+    background: #78CFBF;    
+}
+.clustering-panel .personal .content,.clustering-panel .personal .pt-footer{
+    background: #82DACA;
+}
+.clustering-panel .personal .content:after{	
+	border-top-color: #82DACA;	
+}
+.clustering-panel .personal .pt-footer:after{
+    border-top-color: #FFFFFF;
+}
+/*PROFESSIONAL*/
+.clustering-panel .professional .title{
+    background: #3EC6E0;
+}
+.clustering-panel .professional .content,.clustering-panel .professional .pt-footer{
+    background: #53CFE9;
+}
+.clustering-panel .professional .content:after{	
+	border-top-color: #53CFE9;	
+}
+.clustering-panel .professional .pt-footer:after{
+    border-top-color: #FFFFFF;
+}
+/*BUSINESS*/
+.clustering-panel .business .title{
+    background: #E3536C;
+}
+.clustering-panel .business .content,.clustering-panel .business .pt-footer{
+    background: #EB6379;
+}
+.clustering-panel .business .content:after{	
+	border-top-color: #EB6379;	
+}
+.clustering-panel .business .pt-footer:after {	
+	border-top-color: #FFFFFF;	
+}
+/*HOLIDAYS*/
+.clustering-panel .holidays .title{
+    background: #CC00CC;
+}
+.clustering-panel .holidays .content,.clustering-panel .holidays .pt-footer{
+    background: #CC00CC;
+}
+.clustering-panel .holidays .content:after{
+        border-top-color: #CC00CC;
+}
+.clustering-panel .holidays .pt-footer:after {
+        border-top-color: #FFFFFF;
+}
+/*MEETING*/
+.clustering-panel .meeting .title{
+    background: #FFCC00;
+}
+.clustering-panel .meeting .content,.clustering-panel .meeting .pt-footer{
+    background: #FFCC00;
+}
+.clustering-panel .meeting .content:after{
+        border-top-color: #FFCC00;
+}
+.clustering-panel .meeting .pt-footer:after {
+        border-top-color: #FFFFFF;
+}

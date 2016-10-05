@@ -19,19 +19,15 @@
 //	echo 'We have received name '.$name.' and files '.$fileNames;
 //	exit(0);
 	$description = getForm('description','');
-	$private = getForm('private','true');
-	$users = getForm('users',$user);
         require_once('getAnalysis.php');
 
 	echo "--".$analysis."--";
-
+exit(0);
         $data = array(
                 'collectionName' => $name,
                 'description' => $description,
-                'private' => $private,
                 'user' => $user,
-	        'analysis' => trim($analysis,","),
-                'users' => $users
+	        'analysis' => trim($analysis,",")
         );
 
 //var_dump($data);

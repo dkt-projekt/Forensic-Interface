@@ -3,7 +3,7 @@
         $siteTitle = 'Collections - Information Forensics';
         require_once('lib2.php');
 
-	$user = getSession("forensicUser","");
+//	$user = getSession("forensicUser","");
 	$collectionId = getSession('forensicCollectionId','');
 	$documentId = getForm('documentId','');
 	$documentName = getForm('documentName','');

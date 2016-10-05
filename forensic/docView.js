@@ -11,7 +11,7 @@ function prepareDocsView( jsonResult ) {
 	for (var key in resultData.documents){
 		innerText += 
 		//"<div class=\"col-md-3\" style=\"width:25%;margin:0px;border-width:2px;border-style: solid;\">" + 
-		"<div class=\"col-lg-3 col-md-4 col-sm-6\" style=\"margin:0px;border-width:2px;border-style: solid;\">" + 
+/*		"<div class=\"col-lg-3 col-md-4 col-sm-6\" style=\"margin:0px;border-width:2px;border-style: solid;\">" + 
 		"	<div class=\"caption\">" + 
 		"   	 <h4><a href=\"documentDetail.php?documentId="+resultData.documents[key].documentId+"&documentName="+resultData.documents[key].documentName+"\">" + resultData.documents[key].documentName + "</a></h4>" + 
 		"   	 <p><a href=\"documentDetail.php?documentId="+resultData.documents[key].documentId+"&documentName="+resultData.documents[key].documentName+"\">See docujment details</a></p>" + 
@@ -33,7 +33,14 @@ function prepareDocsView( jsonResult ) {
 		"<p class=\"pull-right\" style=\"margin-right:20px;\"> <i class=\"fa fa-check\"></i></p>" + 
 		"</div>" + 
 		"	</div>" + 
-		"</div>";
+		"</div>";*/
+"<div class=\"col-lg-1 col-md-2 col-sm-4\" style=\"margin:0px;text-align:center;\">" +
+"<a href=\"documentDetail.php?documentId="+resultData.documents[key].documentId+"&documentName="+resultData.documents[key].documentName+"\">" +
+"<img src=\"documentLogo.png\" alt=\"Document Logo\" height=\"70%\" width=\"70%\"/>" +
+"<p>" + resultData.documents[key].documentName.substring(0,10) + "..</p>" +
+"</a>" +
+"</div>";
+
 	}
 	document.getElementById("main-content-content").innerHTML += innerText;
 }

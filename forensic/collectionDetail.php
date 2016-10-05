@@ -1,10 +1,10 @@
 <?php
 	$siteName = 'collections';
-	$siteTitle = 'Collections - Information Forensics';
+	$siteTitle = 'Collection Details - Information Forensics';
 	require_once('lib2.php');
 
-	$userId = getSession('forensicUser','');
-        $user = getSession("forensicUser","");
+//	$userId = getSession('forensicUser','');
+//      $user = getSession("forensicUser","");
 	$collectionId = getForm('collectionId','');
 	if($collectionId!=''){
 		setSession('forensicCollectionId',$collectionId);
@@ -28,17 +28,17 @@ $(document).ready(function() {
 	var url = 'http://dev.digitale-kuratierung.de/forin/forensic/';
 
         $('#collectionMenuList li a').click(function(e) { 
-                $('body').addClass("loading");
                 e.preventDefault();
                 var href = url + $(this).attr('id') + '.html ';
                 var collectionName = '<?php echo $collectionId;?>';
                 var userId = '<?php echo $userId;?>';
                 var content = '';
                 var urlPath = '';
-		callListDocuments($(this).attr('id'),collectionName,userId);
-//              alert('success');
                 $('#main-content').empty(); 
                 $('#main-content').load(href);
+                $('body').addClass("loading");
+		callListDocuments($(this).attr('id'),collectionName,userId);
+//              alert('success');
 //                $('body').removeClass("loading");
         });
 
@@ -55,6 +55,7 @@ $(document).ready(function() {
 ?>
 <div id="main" class="containerr">
 <?php
+	$navbarPath='collectionDetails';
 	require_once("header.php");
 ?>
 
@@ -67,12 +68,12 @@ $(document).ready(function() {
 			<div class="pull-left">
 				<a href="collections.php"><i class="fa fa-arrow-left fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7;"></i></a>
 			</div>
-			<div class="col-lg-10 col-md-10 col-sm-10">
+			<div class="col-lg-11 col-md-11 col-sm-11">
 				<div class="row">
-					<div class="col-lg-2 col-md-2 col-sm-2">
+					<div class="col-lg-1 col-md-1 col-sm-1">
 						<span><?php echo $collectionId;?></span>
 					</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 collectionMenu">
+					<div class="col-lg-9 col-md-9 col-sm-9 collectionMenu">
 						<ul id="collectionMenuList" class="collectionMenuList">
 							<li><a href="javascript:void(0)" id="dashboard">Dashboard</a></li>
 							<li><a href="javascript:void(0)" id="clustering">Clustering</a></li>
@@ -80,6 +81,9 @@ $(document).ready(function() {
 							<li><a href="javascript:void(0)" id="map">Map</a></li>
 							<li><a href="javascript:void(0)" id="timeline">Timeline</a></li>
 							<li><a href="javascript:void(0)" id="semanticexploration">Semantic Exploration</a></li>
+							<li><a href="javascript:void(0)" id="autoglossary">Autoglossary</a></li>
+							<li><a href="javascript:void(0)" id="stats">Statistics</a></li>
+							<li><a href="javascript:void(0)" id="authorities">Authorities</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-2 col-md-2 col-sm-2">

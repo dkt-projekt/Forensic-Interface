@@ -2,7 +2,7 @@
 	$siteName = 'index';
         $siteTitle = 'Home - Information Forensics';
         require_once('lib2.php');
-        $user = getSession('forensicUser','');
+//        $user = getSession('forensicUser','');
 ?>
 <?php
 require_once("head.php");
@@ -18,9 +18,10 @@ require_once("sidebar.php");
 <div id="main" class="containerr">
 
 <?php
+$navbarPath='index';
 require_once("header.php");
 ?>
-                <div class="row carousel-holder">
+                <!--<div class="row carousel-holder">
 
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -48,12 +49,25 @@ require_once("header.php");
                             </a>
                         </div>
                     </div>
-                </div>
-  <div class="row">
-    <div class="col-md-12">
+                </div>-->
+  <div class="row" style="">
+    <!--<div class="col-lg-6 col-md-6 col-sm-12">
       <h2>Forensics</h2>
       <p>This is a platform developed for the forensics of digital information in order to help knowledge workers to make easier their tasks at analysing, studying and exploring huge collections of information in different multimedia formats.</p>
     </div>
+    <div class="col-lg-6 col-md-6 col-sm-12" style="text-align:center;">-->
+    <div class="col-lg-12 col-md-12 col-sm-12" style="min-height:600px;display: flex;justify-content: center;align-items: center;">
+    <div class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);">
+      <h2>Forensics</h2>
+	<br/>
+      <p>This is a platform developed for the forensics of digital information in order to help knowledge workers to make easier their tasks at analysing, studying and exploring huge collections of information in different multimedia formats.</p>
+    </div>
+    </div>
+
   </div>
 
 </div>

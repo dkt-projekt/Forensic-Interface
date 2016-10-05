@@ -12,19 +12,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-<?php
-	printNavbarPath('index');
-?>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
+<?php
+	printNavbarPath($navbarPath,$collectionId);
+?>
                 <!--<li class="dropdown">
                     <a class="dropdown-toggle" href="index.php">
                         <i class="fa fa-home fa-fw"></i>
                     </a>
                 </li>-->
 <?php
-        if($user==''){
+/*        if($user==''){
                    echo '<li><a href="signin.php"><i class="fa fa-user fa-fw"></i> Sign in</a></li>';
                    echo '<li class="divider"></li>';
                    echo '<li><a href="signup.php"><i class="fa fa-sign-out fa-fw"></i> Sign up</a></li>';
@@ -34,7 +34,7 @@
                    echo '<li><a href="profile.php"><i class="fa fa-user fa-fw"></i> User Profile</a></li>';
                    echo '<li class="divider"></li>';
                    echo '<li><a href="signout.php"><i class="fa fa-sign-out fa-fw"></i> Sign out</a></li>';
-        }
+        }*/
 ?>
             </ul>
         </div>

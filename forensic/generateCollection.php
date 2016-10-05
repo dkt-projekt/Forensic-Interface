@@ -2,10 +2,10 @@
 	$siteTitle = 'Generate Collection - Forensic';
 	require_once('lib2.php');
         $user = getSession('forensicUser','');
-        if($user==''){
+        /*if($user==''){
 		echo 'ERROR';
                 exit(0);
-        }
+        }*/
 
 	$name = getForm('collectionName','');
 	if($name==''){
@@ -35,9 +35,8 @@
         );
 
 //var_dump($data);
-/*
-//	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/e-parrot/createCollection", $data);
-*/
+
+//	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/data-backend/createCollection", $data);
 	$errormessage = '';
 	if(strpos($result,"successfully")==false){
 		$errormessage = 'Error at generating the collection:<br/>'.$result;

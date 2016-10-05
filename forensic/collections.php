@@ -4,7 +4,7 @@
         require_once('lib2.php');
 	require_once("head.php");
 
-	$user = getSession('forensicUser','');
+//	$user = getSession('forensicUser','');
 
 ?>
 <body>
@@ -17,14 +17,22 @@ require_once("sidebar.php");
 
 <div id="main" class="containerr">
 <?php
+$navbarPath = 'collections';
 require_once("header.php");
 ?>
   <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
+<div class="col-lg-1 col-md-2 col-sm-2" style="margin:0px;text-align:center;">
+<a href="newCollection.php">
+<i class="fa fa-plus-square-o fa-4x" aria-hidden="true" style=""></i>
+<p>Create New Collection</p>
+</a>
+</div>
+
+<!--    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
                                 <h4 class="pull-right"><i class="fa fa-plus-square-o"></i></h4>
                                 <h4><a href="newCollection.php">Add New Collection</a></h4>
                                 <p>In order to create / add a new collection click at <a href="newCollection.php">Create New Collection</a>.</p>
-    </div>
+    </div>-->
 
 <?php
         $data = array(
@@ -67,9 +75,15 @@ require_once("header.php");
 			$notpro = $obj->counts->NOT_PROCESSED;
 
 ?>
-    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
+    <div class="col-lg-1 col-md-2 col-sm-4" style="margin:0px;text-align:center;">
+                            <a href="collectionDetail.php?collectionId=<?php echo $cn; ?>">
+                            <img src="collectionLogo.png" alt="Collection Logo" height="100%" width="100%"/>
+                            <p><?php echo substr($cn,0,10).'..'; ?></p>
+                            </a>
+    </div>
+
+    <!--<div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
                             <div class="caption">
-                                <!--<h4 class="pull-right">$24.99</h4>-->
                                 <h4><a href="collectionDetail.php?collectionId=<?php echo $cn; ?>"><?php echo $cn; ?></a></h4>
                                 <p><a href="collectionDetail.php?collectionId=<?php echo $cn; ?>">See complete collection</a></p>
                             </div>
@@ -79,16 +93,15 @@ require_once("header.php");
                                 <p class="pull-right" style="margin-right:20px;"> <?php echo $error; ?><i class="fa fa-times"></i></p>
                                 <p class="pull-right" style="margin-right:20px;"> <?php echo $processed; ?><i class="fa fa-check"></i></p>
                             </div>
-    </div>
+    </div>-->
 <?php
 		}
                 foreach($json2->collections as $obj){
 			$cn = $obj->collectionName;
 			$ci = $obj->collectionId;
 ?>
-    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
+<!--    <div class="col-lg-3 col-md-4 col-sm-6" style="margin:0px;border-width:2px;border-style: solid;">
                             <div class="caption">
-                                <!--<h4 class="pull-right">$24.99</h4>-->
                                 <h4><a href="collectionDetail.php?collectionId=<?php echo $cn; ?>"><?php echo $cn; ?></a></h4>
                                 <p><a href="collectionDetail.php?collectionId=<?php echo $ci; ?>">See complete collection</a></p>
                             </div>
@@ -98,10 +111,34 @@ require_once("header.php");
                                 <p class="pull-right" style="margin-right:20px;"> <?php echo $error; ?><i class="fa fa-times"></i></p>
                                 <p class="pull-right" style="margin-right:20px;"> <?php echo $processed; ?><i class="fa fa-check"></i></p>
                             </div>
+    </div>-->
+
+<?php
+                }
+                foreach($json2->collections as $obj){
+                        $cn = $obj->collectionName;
+                        $ci = $obj->collectionId;
+                        $desp = $obj->collectionDescription;
+?>
+    <!--<div class="col-lg-1 col-md-2 col-sm-4" style="margin:0px;border-width:2px;border-style: solid;text-align:center;">-->
+    <div class="col-lg-1 col-md-2 col-sm-4" style="margin:0px;text-align:center;">
+            		    <!--<a href="collectionDetail.php?collectionId=<?php echo $cn; ?>" class="btn btn-primary btn-large">See Details &raquo;</a></p>-->
+            		    <a href="collectionDetail.php?collectionId=<?php echo $cn; ?>">
+			    <img src="collectionLogo.png" alt="Collection Logo" height="100%" width="100%"/>
+                            <p><?php echo substr($cn,0,10).'..'; ?></p>
+            		    <!--<p><?php echo $desp; ?></p>
+                            <div class="ratings">
+                                <p class="pull-right" style="margin-right:20px;"> <?php echo $notpro; ?><i class="fa fa-exclamation-triangle"></i></p>
+                                <p class="pull-right" style="margin-right:20px;"> <?php echo $currently; ?><i class="fa fa-gears fa-hourglass-half"></i></p>
+                                <p class="pull-right" style="margin-right:20px;"> <?php echo $error; ?><i class="fa fa-times"></i></p>
+                                <p class="pull-right" style="margin-right:20px;"> <?php echo $processed; ?><i class="fa fa-check"></i></p>
+                            </div>-->
+			    </a>
     </div>
 
 <?php
                 }
+
 
 	}
 ?>

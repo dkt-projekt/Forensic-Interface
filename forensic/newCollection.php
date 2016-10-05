@@ -13,8 +13,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-
-
 <div id="m" class="container-fluid">
 <?php
 	require_once("sidebar.php");
@@ -142,8 +140,8 @@ $("#upload").submit(function(event) {
 
 	/* Alerts the results */
 	posting.done(function( data ) {
-		alert(data);
-//		window.location.assign("collectionDetail.php?collectionId="+$('#collectionName').val());
+//		alert(data);
+		window.location.assign("collectionDetail.php?collectionId="+$('#collectionName').val());
 	});
 	posting.fail(function(xhr,status,error){
 		alert(status);

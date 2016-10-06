@@ -19,7 +19,7 @@ $navbarPath = 'collections';
 require_once("header.php");
 ?>
 
-    <div class="row"style="padding-top:10px">
+    <div class="row"style="padding-top:50px; padding-left:120px">
     	<div class="col-lg-1 col-md-2 col-sm-2" style="margin:0px;text-align:center;">
     		<a href="newCollection.php">
     			<i class="fa fa-plus-square-o fa-4x" aria-hidden="true" style=""></i>

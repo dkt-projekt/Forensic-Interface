@@ -64,7 +64,7 @@ require_once("header.php");
 ?>
 
   <div class="row" style="margin:0;">
-    <div class="col-lg-12 col-md-12 col-sm-12" style="background-color:#0B3861;color:#81BEF7;">
+    <div class="col-lg-12 col-md-12 col-sm-12" style="background-color:#727173;color:#81BEF7;">
   <div class="row">
       <div class="pull-right" id="documentMenuList">
         <a href="documentConfiguration.php" id="documentConfiguration"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7"></i></a>

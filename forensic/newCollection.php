@@ -36,10 +36,10 @@ if($errormessage!=''){
 }
 ?>
 <div class="row" style="width:100%;margin:0">
-	<div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;background-color:#0B3861;color:#81BEF7;">
+	<div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;color:#81BEF7;background-color:#727173;">
 		<div class="row">
 			<div class="pull-right">
-				<a href="collectionConfiguration.php"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7"></i></a>
+				<a href="collectionConfiguration.php"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7;"></i></a>
 			</div>
 			<div class="pull-left">
 				<a href="collections.php"><i class="fa fa-arrow-left fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7;"></i></a>

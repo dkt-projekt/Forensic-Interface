@@ -4,7 +4,7 @@
 <div id="mySidenav" class="sidenav">
 <div class="sidebar-links">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <span style="font-size:30px;cursor:pointer" onclick="openNavSub()">&#9776;</span>
+      <!-- <span style="font-size:30px;cursor:pointer" onclick="openNavSub()">&#9776;</span> -->
 
   <a href="index.php">Home</a>
   <a href="collections.php">Collections</a>

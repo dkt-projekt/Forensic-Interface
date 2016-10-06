@@ -18,13 +18,14 @@ require_once("sidebar.php");
 $navbarPath = 'collections';
 require_once("header.php");
 ?>
-<div class="row">
-	<div class="col-lg-1 col-md-2 col-sm-2" style="margin:0px;text-align:center;">
-		<a href="newCollection.php">
-			<i class="fa fa-plus-square-o fa-4x" aria-hidden="true" style=""></i>
-			<p>Create New Collection</p>
-		</a>
-	</div>
+
+    <div class="row"style="padding-top:10px">
+    	<div class="col-lg-1 col-md-2 col-sm-2" style="margin:0px;text-align:center;">
+    		<a href="newCollection.php">
+    			<i class="fa fa-plus-square-o fa-4x" aria-hidden="true" style=""></i>
+    			<p>Create New Collection</p>
+    		</a>
+    	</div>
 
 <?php
         $data = array('user' => $user);
@@ -66,7 +67,7 @@ require_once("header.php");
 ?>
     <div class="col-lg-1 col-md-2 col-sm-4" style="margin:0px;text-align:center;">
                             <a href="collectionDetail.php?collectionId=<?php echo $cn; ?>">
-                            <img src="collectionLogo.png" alt="Collection Logo" height="100%" width="100%"/>
+                            <img src="images/collectionLogo.svg" alt="Collection Logo" height="100%" width="100%"/>
                             <p><?php echo substr($cn,0,10).'..'; ?></p>
                             </a>
     </div>
@@ -93,7 +94,7 @@ require_once("header.php");
     <!--<div class="col-lg-1 col-md-2 col-sm-4" style="margin:0px;border-width:2px;border-style: solid;text-align:center;">
     <div class="col-lg-1 col-md-2 col-sm-4" style="margin:0px;text-align:center;">
             		    <a href="collectionDetail.php?collectionId=<?php echo $cn; ?>">
-			    <img src="collectionLogo.png" alt="Collection Logo" height="100%" width="100%"/>
+			    <img src="images/collectionLogo.svg" alt="Collection Logo" height="100%" width="100%"/>
                             <p><?php echo substr($cn,0,10).'..'; ?></p>
             		    <p><?php echo $desp; ?></p>
                             <div class="ratings">

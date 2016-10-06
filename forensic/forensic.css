@@ -14,9 +14,10 @@ body {
 
 /***** Header style *****/
 .navbar {
-    background-color: black;
+    background-color: #4A4A4A;
     width: 100%;
     margin:0px;
+    min-height: 80px;
 }
 .navbar-top-links {
     margin-right: 0;

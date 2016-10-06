@@ -93,8 +93,8 @@ body {
 }
 
 .collectionMenuList li a {
-    color:#81BEF7;
-    padding: 15px;
+    color:#FFFFFF;
+    padding: 5px;
 /*    min-height: 110px;
 */}
 
@@ -110,10 +110,12 @@ body {
     background-color: #323233;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 160px;
+
 }
 
 .sidenav .sidebar-links a {
+
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 100%;

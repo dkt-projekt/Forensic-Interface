@@ -3,8 +3,9 @@
 ?>
         <div class="navbar">
             <div class="navbar-header">
-      		<span class="navbar-brand" style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span>
-                <a class="navbar-brand" href="index.php"><img src="images/DKT_logo_final.png" alt="Forensics" style="max-height:90px;"/></a>
+      		<span class="navbar-brand" style="font-size:30px; padding-top:38px; cursor:pointer;color:white;" onclick="openNav()">&#9776;</span>
+                <a class="navbar-brand" href="index.php"><img src="images/DKT_logo_final.svg" alt="Forensics" style="max-height:90px;"/></a>
+                <div class="navbar-wordbrand">Digitale Kuratierungs Technologien</div>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>

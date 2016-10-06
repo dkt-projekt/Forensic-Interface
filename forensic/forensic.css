@@ -1,8 +1,9 @@
 body {
     font-family: "Lato", sans-serif;
-    background-color:#a8a8a8;
+    background-color:#C2C2C3;
     /*background-color:#867979;*/
     padding:0;
+    box-sizing: border-box;
 }
 
 
@@ -14,10 +15,24 @@ body {
 
 /***** Header style *****/
 .navbar {
-    background-color: black;
-    width: 100%;
+    background-color: #4A4A4A;
     margin:0px;
+    min-height: 80px;
+    border-radius: 0px;
 }
+
+.navbar-header {
+    float: left;
+    width: 100%;
+    
+}
+
+.navbar-wordbrand{
+    color: #FFFFFF;
+    font-size: 170%;
+    padding-top: 30px;
+}
+
 .navbar-top-links {
     margin-right: 0;
 }
@@ -32,6 +47,9 @@ body {
 
 .navbar-top-links li a {
     padding: 15px;
+
+
+
 /*    min-height: 110px;
 */}
 
@@ -323,7 +341,7 @@ xmp {
     white-space: -o-pre-wrap; /* Opera */
     white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
     word-wrap: break-word; /* IE 5.5+ */
-//    background-color: #a8a8a8;
+//    background-color: #C2C2C3;
 }
 
 

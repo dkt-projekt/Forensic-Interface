@@ -15,10 +15,21 @@ body {
 /***** Header style *****/
 .navbar {
     background-color: #4A4A4A;
-    width: 100%;
     margin:0px;
     min-height: 80px;
 }
+
+.navbar-header {
+    float: left;
+    width: 100%;
+    
+}
+
+.navbar-wordbrand{
+    color: #FFFFFF;
+    font-size: 170%;
+}
+
 .navbar-top-links {
     margin-right: 0;
 }
@@ -33,6 +44,9 @@ body {
 
 .navbar-top-links li a {
     padding: 15px;
+
+
+
 /*    min-height: 110px;
 */}
 

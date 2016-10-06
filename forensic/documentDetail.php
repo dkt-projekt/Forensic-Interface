@@ -21,14 +21,15 @@
                 var userId = '<?php echo $userId;?>';
                 var documentId = '<?php echo $documentId;?>';
                 var documentName = '<?php echo $documentName;?>';
-                var posting = $.post( 'http://dev.digitale-kuratierung.de/api/e-parrot/'+collectionName+'/'+documentName+'/overview', { user: userId } );
+//alert('http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/documents?documentName='+encodeURIComponent(documentId));
+                var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/documents?documentName='+encodeURIComponent(documentId), { user: userId, highlightedContent: true } );
 //                alert( 'http://dev.digitale-kuratierung.de/api/e-parrot/'+collectionName+'/'+documentName+'/overview' );
                 posting.done(function( data ) {
-			//alert(data);
+//			alert(data);
 		        var resultData = JSON.parse(data);
-                        $('#high-content').html(resultData.highlightedContent+"                                        <div class=\"col-lg-12 col-md-12\"><span class=\"label label-default\">Other</span><span></span><span class=\"label label-primary\">Temporal Expresions</span><span></span><span class=\"label label-success\">Person</span><span></span><span class=\"label label-info\">Organisation</span><span></span><span class=\"label label-warning\">Location</span><span></span><!--<span class=\"label label-danger\">Danger Label</span>--></div>");
-                        $('#nif-content').html("<xmp>"+resultData.annotatedContent+"</xmp>");
-                        alert("<pre>"+resultData.annotatedContent+"</pre>");
+                        $('#high-content').html(resultData.highcontent+"                                        <div class=\"col-lg-12 col-md-12\"><span class=\"label label-default\">Other</span><span></span><span class=\"label label-primary\">Temporal Expresions</span><span></span><span class=\"label label-success\">Person</span><span></span><span class=\"label label-info\">Organisation</span><span></span><span class=\"label label-warning\">Location</span><span></span><!--<span class=\"label label-danger\">Danger Label</span>--></div>");
+                        $('#nif-content').html("<xmp>"+resultData.nifcontent+"</xmp>");
+                        alert("<pre>"+resultData.nifcontent+"</pre>");
                         $('body').removeClass("loading");
                 });
                 posting.fail(function(xhr,status,error){
@@ -79,8 +80,8 @@ require_once("header.php");
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 collectionMenu">
             <ul id="documentMenuList" class="collectionMenuList">
-              <li>  <a href="javascript:void(0)" id="documentHighContent">Highlight</a></li>
-              <li><a href="javascript:void(0)" id="documentNifContent">NIF Content</a></li>
+<!--              <li>  <a href="javascript:void(0)" id="documentHighContent">Highlight</a></li>
+              <li><a href="javascript:void(0)" id="documentNifContent">NIF Content</a></li>-->
             </ul>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2">
@@ -100,6 +101,17 @@ require_once("header.php");
     	</div>
     </div>
   </div>
+
+<div class="row" style="width:100%;margin:0;">
+        <div id="configuration-menu" class="col-lg-2 col-md-2 col-sm-2" style="padding:10px;float:right;text-align:center;background-color:#0B3861;visibility:hidden;">
+                                <a href="newDocument.php" class="btn btn-success">Add Document</a>
+                                <a href="configurationCollection.php" class="btn btn-warning">Edit Collection</a>
+                                <a href="deleteCollection.php?collectionId=<?php echo $collectionId; ?>" class="btn btn-danger">Delete Collection</a>       
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" id="main-content" style="margin:0;padding:0px;">
+        </div>
+</div>
+
 </div>
 </div>
 <?php

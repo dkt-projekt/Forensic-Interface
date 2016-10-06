@@ -63,7 +63,7 @@ $(document).ready(function() {
 	<div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;background-color:#0B3861;color:#81BEF7;">
 		<div class="row">
 			<div class="pull-right">
-				<a href="collectionConfiguration.php"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7"></i></a>
+				<a href="collectionConfiguration.php" id="configurationButton"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7"></i></a>
 			</div>
 			<div class="pull-left">
 				<a href="collections.php"><i class="fa fa-arrow-left fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7;"></i></a>
@@ -77,7 +77,7 @@ $(document).ready(function() {
 						<ul id="collectionMenuList" class="collectionMenuList">
 							<li><a href="javascript:void(0)" id="dashboard">Dashboard</a></li>
 							<li><a href="javascript:void(0)" id="clustering">Clustering</a></li>
-							<li><a href="javascript:void(0)" id="documents">Documents</a></li>
+							<li><a href="javascript:void(0)" id="listdocuments">Documents</a></li>
 							<li><a href="javascript:void(0)" id="map">Map</a></li>
 							<li><a href="javascript:void(0)" id="timeline">Timeline</a></li>
 							<li><a href="javascript:void(0)" id="semanticexploration">Semantic Exploration</a></li>
@@ -103,12 +103,40 @@ $(document).ready(function() {
 </div>
 
 <div class="row" style="width:100%;margin:0;">
+	<div id="configuration-menu" class="col-lg-2 col-md-2 col-sm-2" style="padding:10px;float:right;text-align:center;background-color:#0B3861;visibility:hidden;">
+                                <a href="newDocument.php" class="btn btn-success">Add Document</a>
+                                <a href="configurationCollection.php" class="btn btn-warning">Edit Collection</a>
+                                <a href="deleteCollection.php?collectionId=<?php echo $collectionId; ?>" class="btn btn-danger">Delete Collection</a>		
+	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12" id="main-content" style="margin:0;padding:0px;">
 	</div>
 </div>
 <div class="modal"><!-- Place at bottom of page --></div>
 </div>
 </div>
+<script>
+
+document.getElementById("configurationButton").addEventListener("click", function(event){
+    event.preventDefault();
+        if(document.getElementById("configuration-menu").style.visibility=='hidden'){
+                document.getElementById("configuration-menu").style.visibility = 'visible';
+        }
+        else{
+                document.getElementById("configuration-menu").style.visibility = 'hidden';
+        }
+
+});
+
+/*function openMenu() {
+	if(document.getElementById("configuration-menu").style.visibility=='hidden'){
+    		document.getElementById("configuration-menu").style.visibility = 'visible';
+	}
+	else{
+    		document.getElementById("configuration-menu").style.visibility = 'hidden';
+	}
+}*/
+</script>
+
 <?php
 	require_once("footer.php");
 ?>

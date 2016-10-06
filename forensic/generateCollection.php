@@ -19,20 +19,20 @@
 //	echo 'We have received name '.$name.' and files '.$fileNames;
 //	exit(0);
 	$description = getForm('description','');
-        require_once('getAnalysis.php');
+	$pipeline = trim(getForm('analysis',''),',');
+//        require_once('getAnalysis.php');
 
-	echo "--".$analysis."--";
-exit(0);
+//	echo "--".$pipeline."--";
         $data = array(
                 'collectionName' => $name,
                 'description' => $description,
                 'user' => $user,
-	        'analysis' => trim($analysis,",")
+	        'pipeline' => $pipeline
         );
 
 //var_dump($data);
-
-//	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/data-backend/createCollection", $data);
+/*
+	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/data-backend/createCollection", $data);
 	$errormessage = '';
 	if(strpos($result,"successfully")==false){
 		$errormessage = 'Error at generating the collection:<br/>'.$result;
@@ -42,36 +42,51 @@ exit(0);
 	else{
 		$message = $result;
 		echo $message;
-		exit(0);
 	}
-
-/*	echo ''.getForm('','');
-	exit(0);
 */
+
+
+	$output = '';
 	$fileNamesArray = explode(",",$fileNames);
-	foreach ($fileNamesArray as $target_file_withtype){
-		$parseTypes = explode("#",$target_file_withtype);
+	foreach ($fileNamesArray as $target_file){
+//		$parseTypes = explode("#",$target_file_withtype);
 		//$target_file = $parseTypes[0];
 		//$format = $parseTypes[1];
+//$output = $output.','.$target_file;
+		//$filecontent = file_get_contents($target_file);
+	        $dataInd = array(
+		        'documentName' => $documentName,
+        		'user' => $user,
+		        'fileName' => $target_file,
+		        'pipeline' => $pipeline
+	        );
+//        var_dump($data);
+//      echo '<br/>';
+//      echo '<br/>';
+//      echo '<br/>';
 
-		$filecontent = file_get_contents($target_file);
-		createDocument($name,$name.'_1','',$user,$format,$filecontent,$analysis);
-	}
-	/*
-	//$target_dir = "/tmp/";
-        //$target_file = $target_dir . basename($_FILES["filefile"]["name"]);
-        $target_file = $target_dir . basename($_FILES["filefile"]["name"]);
-        if ($_FILES["filefile"]["size"] > 500000) {
-	        $errormessage = "Sorry, your file is too large.";
-        }
-	else{
-//	        echo $target_file.'<br/>';
-	        if (move_uploaded_file($_FILES["filefile"]["tmp_name"], $target_file)) {
-			$filecontent = file_get_contents ($target_file);
-			createDocument($name,$name.'_1','',$user,$format,$filecontent,$analysis);
-		} else {
-			$errormessage = "Sorry, there was an error uploading your file.";
+		$contentType = '';
+		echo $target_file.',';
+		echo "http://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents";
+		if(($temp = strlen($documentName) - strlen('.zip')) >= 0 && strpos($documentName, '.zip', $temp) !== false){
+			$contentType = 'application/zip';
+	        	$result = CallAPI3("POST", "http://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents", $dataInd, $contentType);
 		}
-	}*/
+		else{
+	        	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents", $dataInd);
+		}
+echo $result;
+exit(0);
+	        //$json = json_decode($result);
+//      var_dump($json);
+//      exit(0);
+	        if(strpos($result,"successfully")==false){
+			$output = $output.' Error at including the document: '.$documentName.'.';
+	        }
+	        else{
+			$output = $output.' Successfully added document: '.$documentName.'.';
+	        }
+	}
+	echo $output;
 	exit(0);
 ?>

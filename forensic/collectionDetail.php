@@ -60,7 +60,7 @@ $(document).ready(function() {
 ?>
 
 <div class="row" style="width:100%;margin:0">
-	<div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;background-color:#0B3861;color:#81BEF7;">
+	<div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;background-color:#727173;color:#81BEF7;">
 		<div class="row">
 			<div class="pull-right">
 				<a href="collectionConfiguration.php" id="configurationButton"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7"></i></a>
@@ -89,7 +89,7 @@ $(document).ready(function() {
 					<div class="col-lg-2 col-md-2 col-sm-2">
 						<form class="navbar-form" role="search">
 							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Search" name="q" style="background-color:#81BEF7;color:black;"/>
+								<input type="text" class="form-control" placeholder="Search" name="q" style="background-color:#FFFFFF;color:black;"/>
 								<div class="input-group-btn">
 									<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 								</div>

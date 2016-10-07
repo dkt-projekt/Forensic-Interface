@@ -36,13 +36,13 @@
   }
 ?>
   <div class="row" style="width:100%;margin:0">
-    <div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;background-color:#0B3861;color:#81BEF7;">
+    <div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;background-color:#727173;color:#81BEF7;">
       <div class="row">
         <div class="pull-right">
           <a href="documentConfiguration.php"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7"></i></a>
         </div>
         <div class="pull-left">
-          <a href="collectionDetail.php?view=documents"><i class="fa fa-arrow-left fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7;"></i></a>
+          <a href="collectionDetail.php?view=documents"><i class="fa fa-arrow-left fa-3x" style="font-size:30px;cursor:pointer;color:#FFFFFF;"></i></a>
         </div>
         <div class="col-lg-10 col-md-10 col-sm-10">
           <div class="row">

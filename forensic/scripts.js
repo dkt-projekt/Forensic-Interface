@@ -8,10 +8,15 @@ $(function() {
 
 });
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.getElementById("main").style.width = (document.getElementById("main").clientWidth - 250) + "px";
-    document.getElementById("main").style.width = (100-25000/document.getElementById("main").clientWidth) + "%";
+	if(document.getElementById("mySidenav").style.width=="250px"){
+		closeNav();
+	}
+	else{
+		document.getElementById("mySidenav").style.width = "250px";
+		document.getElementById("main").style.marginLeft = "250px";
+		document.getElementById("main").style.width = (document.getElementById("main").clientWidth - 250) + "px";
+		document.getElementById("main").style.width = (100-25000/document.getElementById("main").clientWidth) + "%";
+	}
 }
 
 function closeNav() {

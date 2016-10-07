@@ -4,6 +4,7 @@ body {
     /*background-color:#867979;*/
     padding:0;
     box-sizing: border-box;
+/*    background-color: #727173;*/
 }
 
 
@@ -51,7 +52,8 @@ body {
 }
 
 .row{
-
+    margin:0px;
+    padding:0px;
     background-color: #727173;
 }
 
@@ -75,8 +77,33 @@ body {
     white-space: normal;
 }
 
+/************** Index.html ***************/
+#index_container{
+	color: white;
+}
+
+#index_content_container{
+	min-height:600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#index_content{
+	text-align:center;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
 /****** Collection Menu characteristics *******/
 
+.colNav {
+	background-color:#727173;
+	color:#81BEF7;
+}
 .collectionMenu {
     margin-right: 0;
     text-align: center;
@@ -107,7 +134,8 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #323233;
+/*    background-color: #323233;*/
+    background-color: #4A4A4A;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 160px;

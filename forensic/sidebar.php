@@ -8,10 +8,10 @@
 
   <a href="index.php">Home</a>
   <a href="collections.php">Collections</a>
-  <a href="#">Configuration</a>
+<!--  <a href="#">Configuration</a>
   <a href="#">Workflow Configuration</a>
   <a href="#">Login</a>
-  <a href="#">Contact</a>
+  <a href="#">Contact</a>-->
 </div>
 
 <div class="sidebar-footer">

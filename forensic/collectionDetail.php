@@ -59,9 +59,9 @@ $(document).ready(function() {
 	require_once("header.php");
 ?>
 
-<div class="row" style="width:100%;margin:0">
+<div class="row colNav" style="width:100%;margin:0">
 	<div class="col-lg-12 col-md-12 col-sm-12" style="width:100%;margin:0px;background-color:#727173;color:#81BEF7;">
-		<div class="row">
+		<div class="row colNav">
 			<div class="pull-right">
 				<a href="collectionConfiguration.php" id="configurationButton"><i class="fa fa-gears fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7"></i></a>
 			</div>
@@ -69,7 +69,7 @@ $(document).ready(function() {
 				<a href="collections.php"><i class="fa fa-arrow-left fa-3x" style="font-size:30px;cursor:pointer;color:#81BEF7;"></i></a>
 			</div>
 			<div class="col-lg-11 col-md-11 col-sm-11">
-				<div class="row">
+				<div class="row colNav">
 					<div class="col-lg-1 col-md-1 col-sm-1">
 						<span><?php echo $collectionId;?></span>
 					</div>
@@ -80,7 +80,7 @@ $(document).ready(function() {
 							<li><a href="javascript:void(0)" id="listdocuments">Documents</a></li>
 							<li><a href="javascript:void(0)" id="map">Map</a></li>
 							<li><a href="javascript:void(0)" id="timeline">Timeline</a></li>
-							<li><a href="javascript:void(0)" id="semanticexploration">Semantic Exploration</a></li>
+<!--							<li><a href="javascript:void(0)" id="semanticexploration">Semantic Exploration</a></li>-->
 							<li><a href="javascript:void(0)" id="autoglossary">Autoglossary</a></li>
 							<li><a href="javascript:void(0)" id="stats">Statistics</a></li>
 							<li><a href="javascript:void(0)" id="authorities">Authorities</a></li>

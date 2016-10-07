@@ -4,8 +4,8 @@
                                                     <label>NLP Pipelines</label>
 							<select name="pipeline" id="pipeline" class="form-control" >
 								<option value="1" selected>German NER</option>
-								<option value="2">English NER</option>
-								<option value="3">German-English Translation</option>
+								<option value="2">English-German Translation</option>
+								<option value="3">English Complete [NER-Linking-Timex-TranslateENDE]</option>
 							</select> 
 <?php
 /*        $data = array(

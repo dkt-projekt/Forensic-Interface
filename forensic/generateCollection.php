@@ -31,7 +31,7 @@
         );
 
 //var_dump($data);
-/*
+
 	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/data-backend/createCollection", $data);
 	$errormessage = '';
 	if(strpos($result,"successfully")==false){
@@ -43,8 +43,10 @@
 		$message = $result;
 		echo $message;
 	}
-*/
 
+
+echo $result;
+exit(0);
 
 	$output = '';
 	$fileNamesArray = explode(",",$fileNames);

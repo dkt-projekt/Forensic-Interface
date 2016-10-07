@@ -10,7 +10,7 @@ require_once("head.php");
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<div id="m" class="container-fluid">
+<div id="m" class="containerr-fluid">
 <?php
 require_once("sidebar.php");
 ?>
@@ -50,18 +50,14 @@ require_once("header.php");
                         </div>
                     </div>
                 </div>-->
-  <div class="row" style="">
+  <div class="row" style="" id="index_container">
     <!--<div class="col-lg-6 col-md-6 col-sm-12">
       <h2>Forensics</h2>
       <p>This is a platform developed for the forensics of digital information in order to help knowledge workers to make easier their tasks at analysing, studying and exploring huge collections of information in different multimedia formats.</p>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12" style="text-align:center;">-->
-    <div class="col-lg-12 col-md-12 col-sm-12" style="min-height:600px;display: flex;justify-content: center;align-items: center;">
-    <div class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);">
+    <div class="col-lg-12 col-md-12 col-sm-12" id="index_content_container" style="min-height:600px;display: flex;justify-content: center;align-items: center;">-->
+    <div class="col-lg-12 col-md-12 col-sm-12" id="index_content_container">
+    <div class="col-lg-12 col-md-12 col-sm-12" id="index_content">
       <h2>Forensics</h2>
 	<br/>
       <p>This is a platform developed for the forensics of digital information in order to help knowledge workers to make easier their tasks at analysing, studying and exploring huge collections of information in different multimedia formats.</p>

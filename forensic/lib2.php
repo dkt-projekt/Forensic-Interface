@@ -126,6 +126,61 @@ function CallAPI2($method, $url, $data = false)
     return $curl_response;
 }
 
+function CallAPI3($method, $url, $data = false, $contentType='text/plain')
+{
+    $curl = curl_init();
+    switch ($method)
+    {
+        case "POST":
+                        curl_setopt($curl, CURLOPT_POST, true);
+                        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+                                            'Content-Type: '.$contentType
+                                            ));
+            if ($data)
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            break;
+        case "PUT":
+            curl_setopt($curl, CURLOPT_PUT, 1);
+            break;
+        case "DELETE":
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+                        $curl_post_data = array(
+                                        'note' => 'this is spam!',
+                                        'useridentifier' => 'agent@example.com',
+                                        'apikey' => 'key001'
+                        );
+                        curl_setopt($curl, CURLOPT_POSTFIELDS, $curl_post_data);
+                        break;
+                default:
+            if ($data)
+                $url = sprintf("%s?%s", $url, http_build_query($data));
+                        curl_setopt($curl, CURLOPT_URL, $url);
+    }
+
+//    // Optional Authentication:
+//    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+//    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
+
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+        $error_message = '';
+        $curl_response = curl_exec($curl);
+        if ($curl_response === false) {
+              $info = curl_getinfo($curl);
+                return $info;
+        }
+        curl_close($curl);
+
+        $decoded = json_decode($curl_response);
+        if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
+                $error_message = '2.error occured during curl exec. Additional info: ' . $decoded->response->errormessage;
+                return $error_message;
+        }
+    return $curl_response;
+}
+
 
 function checkUser($user, $password){
 	return "true";

@@ -81,7 +81,7 @@ if($errormessage!=''){
 			<div class="col-lg-12 col-md-12 col-sm-12" style="border-style:solid;border-width:1px 0px 0px 0px;border-color:white;padding-top:10px">
 				<div class="row">
 <?php
-	require_once('analysis.php');
+	require_once('analysis2.php');
 ?>
 				</div>
 			</div>
@@ -131,7 +131,7 @@ $("#upload").submit(function(event) {
 	url = $form.attr( 'action' );
 
 	/* Send the data using post with element id name and name2*/
-	var posting = $.post( url, { collectionName: $('#collectionName').val(), files: $('#fileNames').html() } );
+	var posting = $.post( url, { collectionName: $('#collectionName').val(), files: $('#fileNames').html(), analysis: $('#pipeline').val() } );
 
 	/* Alerts the results */
 	posting.done(function( data ) {
@@ -245,14 +245,16 @@ function FileSelectHandler(e) {
 			//	alert(xhr.responseText);
 //				$("#textForFormat").html("Format for file "+resText);
 //				div_show();
-				var format = prompt("What is the format of the file ["+resText+"]?\n The possible values are: text/turtle/rdf/zip","text");
+				/*var format = prompt("What is the format of the file ["+resText+"]?\n The possible values are: text/turtle/rdf/zip","text");
 				if(format!="text" && format!="turtle" && format!="rdf" && format!="zip"){
 					alert("Unsupported format: the file will not be uploaded.");
 				}
 				else{
 					ParseFile(files[i]);
 					AddOutputFile(xhr.responseText+"#"+format);
-				}
+				}*/
+				ParseFile(files[i]);
+				AddOutputFile(xhr.responseText);
 			}
 			else{
 				alert(xhr.responseText);

@@ -60,10 +60,10 @@ function callListDocuments(id,collectionName,userId){
 		                $('body').removeClass("loading");
                 	});
                 }
-                else if(id=='documents'){
-			//alert('http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments::::'+userId);
+                else if(id=='listdocuments'){
                 	var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments', { user: userId } );
                 	posting.done(function( data ) {
+				//alert(data);
 				prepareDocsView( data );
 		                $('body').removeClass("loading");
                 	});

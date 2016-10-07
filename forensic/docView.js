@@ -1,6 +1,6 @@
 function prepareDocsView( jsonResult ) {
 	var resultData = JSON.parse(jsonResult);
-//	alert("--OBJECT:"+obj);
+	alert("--OBJECT:"+jsonResult);
 /*	document.getElementById("main-content-content").innerHTML = 
 		"<div class=\"col-md-3\" style=\"width:25%;margin:0px;border-width:2px;border-style: solid;\">" + 
 		"	<h4 class=\"pull-right\"><i class=\"fa fa-plus-square-o\"></i></h4>" + 
@@ -34,12 +34,15 @@ function prepareDocsView( jsonResult ) {
 		"</div>" + 
 		"	</div>" + 
 		"</div>";*/
+//alert(encodeURIComponent(resultData.documents[key].uri));
 "<div class=\"col-lg-1 col-md-2 col-sm-4\" style=\"margin:0px;text-align:center;\">" +
-"<a href=\"documentDetail.php?documentId="+resultData.documents[key].documentId+"&documentName="+resultData.documents[key].documentName+"\">" +
+"<a href=\"documentDetail.php?documentId="+encodeURIComponent(resultData.documents[key].uri)+"\">" +
 "<img src=\"documentLogo.png\" alt=\"Document Logo\" height=\"70%\" width=\"70%\"/>" +
-"<p>" + resultData.documents[key].documentName.substring(0,10) + "..</p>" +
+//"<p>" + resultData.documents[key].uri.substring(0,10) + "..</p>" +
+"<p>" + resultData.documents[key].uri + "..</p>" +
 "</a>" +
 "</div>";
+//	alert(key);
 
 	}
 	document.getElementById("main-content-content").innerHTML += innerText;

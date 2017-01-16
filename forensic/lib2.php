@@ -195,7 +195,7 @@ function checkUser($user, $password){
 //    // Optional Authentication:
 //    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 //    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-	curl_setopt($curl, CURLOPT_URL, 'http://dev.digitale-kuratierung.de/api/e-parrot/checkUser');
+	curl_setopt($curl, CURLOPT_URL, 'https://dev.digitale-kuratierung.de/api/e-parrot/checkUser');
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
 	$result = curl_exec($curl);
@@ -229,7 +229,7 @@ function registerUser($user, $password, $password2, $name){
                 'name' => $name
         );
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_URL, 'http://dev.digitale-kuratierung.de/api/e-parrot/registerUser');
+        curl_setopt($curl, CURLOPT_URL, 'https://dev.digitale-kuratierung.de/api/e-parrot/registerUser');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec($curl);
@@ -263,7 +263,7 @@ function modifyUser($user, $password, $password2, $name){
                 'userName' => $name
         );
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_URL, 'http://dev.digitale-kuratierung.de/api/e-parrot/modifyUser');
+        curl_setopt($curl, CURLOPT_URL, 'https://dev.digitale-kuratierung.de/api/e-parrot/modifyUser');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec($curl);
@@ -294,7 +294,7 @@ function existUser($user){
                 'user' => $user,
         );
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_URL, 'http://dev.digitale-kuratierung.de/api/e-parrot/existUser');
+        curl_setopt($curl, CURLOPT_URL, 'https://dev.digitale-kuratierung.de/api/e-parrot/existUser');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
         $result = curl_exec($curl);
@@ -331,7 +331,7 @@ function createDocument($collectionName,$documentName,$description,$user,$format
 //	echo '<br/>';
 //	echo '<br/>';
         
-        $result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/e-parrot/".$collectionName."/addDocument", $data);
+        $result = CallAPI2("POST", "https://dev.digitale-kuratierung.de/api/e-parrot/".$collectionName."/addDocument", $data);
         $json = json_decode($result);
 //	var_dump($json);
 //	exit(0);

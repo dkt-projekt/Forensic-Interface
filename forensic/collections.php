@@ -29,7 +29,8 @@ require_once("header.php");
 
 <?php
         $data = array('user' => $user);
-      $result = CallAPI2("GET", "http://dev.digitale-kuratierung.de/api/document-storage/collections", $data);
+      $result = CallAPI2("GET", "https://dev.digitale-kuratierung.de/api/document-storage/collections", $data);
+	
 	$result = str_replace('[','',$result);
 	$result = str_replace(']','',$result);
 	$result = str_replace('"','',$result);
@@ -42,7 +43,7 @@ require_once("header.php");
 //                'serviceType' => 'database',
                 'user' => $user
         );
-        //$result2 = CallAPI2("GET", "http://dev.digitale-kuratierung.de/api/e-parrot/listCollections", $data2);
+        //$result2 = CallAPI2("GET", "https://dev.digitale-kuratierung.de/api/e-parrot/listCollections", $data2);
         //$json2 = json_decode($result2);
         //$number2 = count($json2->collections);
 
@@ -57,7 +58,7 @@ require_once("header.php");
         else{
                 foreach($collectionNames as $cn){
 		        $data = array( 'user' => $user );
-			$resultCol = CallAPI2("GET", "http://dev.digitale-kuratierung.de/api/document-storage/collections/".$cn."/status", $data);
+			$resultCol = CallAPI2("GET", "https://dev.digitale-kuratierung.de/api/document-storage/collections/".$cn."/status", $data);
 		        $obj = json_decode($resultCol);
 			$processed = $obj->counts->PROCESSED;
 			$error = $obj->counts->ERROR;

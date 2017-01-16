@@ -21,9 +21,9 @@
                 var userId = '<?php echo $userId;?>';
                 var documentId = '<?php echo $documentId;?>';
                 var documentName = '<?php echo $documentName;?>';
-//alert('http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/documents?documentName='+encodeURIComponent(documentId));
-                var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/documents?documentName='+encodeURIComponent(documentId), { user: userId, highlightedContent: true } );
-//                alert( 'http://dev.digitale-kuratierung.de/api/e-parrot/'+collectionName+'/'+documentName+'/overview' );
+//alert('https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/documents?documentName='+encodeURIComponent(documentId));
+                var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/documents?documentName='+encodeURIComponent(documentId), { user: userId, highlightedContent: true } );
+//                alert( 'https://dev.digitale-kuratierung.de/api/e-parrot/'+collectionName+'/'+documentName+'/overview' );
                 posting.done(function( data ) {
 //			alert(data);
 		        var resultData = JSON.parse(data);
@@ -37,7 +37,7 @@
                         $('body').removeClass("loading");
                 });
 
-        /*var url = 'http://dev.digitale-kuratierung.de/forensic/';
+        /*var url = 'https://dev.digitale-kuratierung.de/forensic/';
 
 	$('#documentMenuList a').click(function(e) { // Al hace click sobre un enlace dentro del menú
                 $('body').addClass("loading");
@@ -50,7 +50,7 @@
 //                $('body').removeClass("loading");
 	});
 
-        $('#main-content').load('http://dev.digitale-kuratierung.de/forin/forensic/documentHighContent.html');
+        $('#main-content').load('https://dev.digitale-kuratierung.de/forin/forensic/documentHighContent.html');
 */
       });    
     </script>

@@ -32,7 +32,7 @@
 
 //var_dump($data);
 
-	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/data-backend/createCollection", $data);
+	$result = CallAPI2("POST", "https://dev.digitale-kuratierung.de/api/data-backend/createCollection", $data);
 	$errormessage = '';
 	if(strpos($result,"successfully")==false){
 		$errormessage = 'Error at generating the collection:<br/>'.$result;
@@ -69,13 +69,13 @@ exit(0);
 
 		$contentType = '';
 		echo $target_file.',';
-		echo "http://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents";
+		echo "https://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents";
 		if(($temp = strlen($documentName) - strlen('.zip')) >= 0 && strpos($documentName, '.zip', $temp) !== false){
 			$contentType = 'application/zip';
-	        	$result = CallAPI3("POST", "http://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents", $dataInd, $contentType);
+	        	$result = CallAPI3("POST", "https://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents", $dataInd, $contentType);
 		}
 		else{
-	        	$result = CallAPI2("POST", "http://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents", $dataInd);
+	        	$result = CallAPI2("POST", "https://dev.digitale-kuratierung.de/api/data-backend/".$name."/documents", $dataInd);
 		}
 echo $result;
 exit(0);

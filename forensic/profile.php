@@ -47,7 +47,7 @@ require_once("header.php");
                 'accessKey' => 'dkt2015$',
                 'user' => $user
         );
-      $result = CallAPI2("GET", "http://dev.digitale-kuratierung.de/api/e-parrot/getUserInformation", $data);
+      $result = CallAPI2("GET", "https://dev.digitale-kuratierung.de/api/e-parrot/getUserInformation", $data);
         $json = json_decode($result);
 
 //var_dump($json);

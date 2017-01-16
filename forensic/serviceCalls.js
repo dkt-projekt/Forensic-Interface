@@ -1,7 +1,7 @@
 function callListDocuments(id,collectionName,userId){
 		userId = 'dkt-project@dfki.de';
                 if(id=='dashboard'){
-                        var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/clustering', { user: userId,limit: 3 } );
+                        var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/clustering', { user: userId,limit: 3 } );
                         posting.done(function( data ) {
                                 $('#dashboard-clustering').html(data);
                                 $('body').removeClass("loading");
@@ -10,7 +10,7 @@ function callListDocuments(id,collectionName,userId){
                                 alert(status);
                                 $('body').removeClass("loading");
                         });
-                        /*var posting2 = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments', { user: userId, limit: 5 } );
+                        /*var posting2 = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments', { user: userId, limit: 5 } );
                         posting2.done(function( data ) {
                                 prepareDocsView( data );
                                 $('body').removeClass("loading");
@@ -19,7 +19,7 @@ function callListDocuments(id,collectionName,userId){
                                 alert(status);
                                 $('body').removeClass("loading");
                         });*/
-                        var posting3 = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/geolocalization', { user: userId, limit: 5 } );
+                        var posting3 = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/geolocalization', { user: userId, limit: 5 } );
                         posting3.done(function( data ) {
                                 $('#dashboard-map').html(data.replace("400px","800px"));
                                 $('body').removeClass("loading");
@@ -28,7 +28,7 @@ function callListDocuments(id,collectionName,userId){
                                 alert(status);
                                 $('body').removeClass("loading");
                         });
-                        var posting4 = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/timelining', { user: userId, limit: 5 } );
+                        var posting4 = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/timelining', { user: userId, limit: 5 } );
                         posting4.done(function( data ) {
                                 //$('#dashboard-timeline').html(data.replace("400px","800px"));
 			        var timeline_json = JSON.parse(data);//make_the_json(); // you write this part
@@ -39,7 +39,7 @@ function callListDocuments(id,collectionName,userId){
                                 alert(status);
                                 $('body').removeClass("loading");
                         });
-/*                        var posting5 = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/semanticexploration', { user: userId, limit: 3 } );
+/*                        var posting5 = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/semanticexploration', { user: userId, limit: 3 } );
                         posting5.done(function( data ) {
                                 $('#dashboard-semanticexploration').html(data.replace("400px","800px"));
                                 $('body').removeClass("loading");
@@ -50,7 +50,7 @@ function callListDocuments(id,collectionName,userId){
                         });*/
                 }
                 else if(id=='clustering'){
-                	var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/clustering', { user: userId } );
+                	var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/clustering', { user: userId } );
                 	posting.done(function( data ) {
                                 $('#main-content-content').html(data.replace("400px","800px")); 
 		                $('body').removeClass("loading");
@@ -61,7 +61,7 @@ function callListDocuments(id,collectionName,userId){
                 	});
                 }
                 else if(id=='listdocuments'){
-                	var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments', { user: userId } );
+                	var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments', { user: userId } );
                 	posting.done(function( data ) {
 				//alert(data);
 				prepareDocsView( data );
@@ -73,7 +73,7 @@ function callListDocuments(id,collectionName,userId){
                 	});
                 }
                 else if(id=='map'){
-                	var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/geolocalization', { user: userId } );
+                	var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/geolocalization', { user: userId } );
                 	posting.done(function( data ) {
                                 $('#main-content-content').html(data.replace("400px","800px")); 
 		                $('body').removeClass("loading");
@@ -84,7 +84,7 @@ function callListDocuments(id,collectionName,userId){
                 	});
                 }
                 else if(id=='timeline'){
-                	var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/timelining', { user: userId } );
+                	var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/timelining', { user: userId } );
                 	posting.done(function( data ) {
 				//alert(data);
 			        var timeline_json = JSON.parse(data);//make_the_json(); // you write this part
@@ -98,7 +98,7 @@ function callListDocuments(id,collectionName,userId){
                 	});
                 }
                 else if(id=='semanticexploration'){
-/*                	var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/semanticexploration', { user: userId } );
+/*                	var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/semanticexploration', { user: userId } );
                 	posting.done(function( data ) {
                                 $('#main-content-content').html(data.replace("400px","800px")); 
 		                $('body').removeClass("loading");
@@ -110,7 +110,7 @@ function callListDocuments(id,collectionName,userId){
 		                $('body').removeClass("loading");
                 }
                 else if(id=='autoglossary'){
-			var apiBase = "http://dev.digitale-kuratierung.de/api";
+			var apiBase = "https://dev.digitale-kuratierung.de/api";
 			$.get(apiBase + "/data-backend/"+collectionName+"/glossary", function(data){
 				var html = "<p>";
 				for( var firstChar in data ){
@@ -146,7 +146,7 @@ function callListDocuments(id,collectionName,userId){
 			});
 
 
-/*                      var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/semanticexploration', { user: userId } );
+/*                      var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/semanticexploration', { user: userId } );
                         posting.done(function( data ) {
                                 $('#main-content-content').html(data.replace("400px","800px")); 
                                 $('body').removeClass("loading");
@@ -158,7 +158,7 @@ function callListDocuments(id,collectionName,userId){
                                 $('body').removeClass("loading");
                 }
                 else if(id=='stats'){
-                        var apiBase = "http://dev.digitale-kuratierung.de/api";
+                        var apiBase = "https://dev.digitale-kuratierung.de/api";
                 	$.get(apiBase + "/data-backend/"+collectionName+"/stats/entities", function(data){
                 	        populateTopEntities(data["http://dbpedia.org/ontology/Person"], "#top-persons");
                 	        populateTopEntities(data["http://dbpedia.org/ontology/Location"], "#top-locations");
@@ -174,7 +174,7 @@ function callListDocuments(id,collectionName,userId){
 
 		}
                 else if(id=='authorities'){
-                        var apiBase = "http://dev.digitale-kuratierung.de/api";
+                        var apiBase = "https://dev.digitale-kuratierung.de/api";
 			alert('Llegamos');
                                 $.get(apiBase + "/data-backend/"+collectionName+"/authorities/api/load-contexts", function(result) {
                                         data.documents = result;
@@ -201,7 +201,7 @@ function callListDocuments(id,collectionName,userId){
 
 function callDocumentDetails(id,collectionName,userId,documentId){
                 if(id=='documentHighContent'){
-                        var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/clustering', { user: userId } );
+                        var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/clustering', { user: userId } );
                         posting.done(function( data ) {
                                 $('#main-content-content').html(data.replace("400px","800px"));
                                 $('body').removeClass("loading");
@@ -212,7 +212,7 @@ function callDocumentDetails(id,collectionName,userId,documentId){
                         });
                 }
                 else if(id=='documentNifContent'){
-                        var posting = $.get( 'http://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments', { user: userId } );
+                        var posting = $.get( 'https://dev.digitale-kuratierung.de/api/data-backend/'+collectionName+'/listDocuments', { user: userId } );
                         posting.done(function( data ) {
                                 prepareDocsView( data );
                                 $('body').removeClass("loading");

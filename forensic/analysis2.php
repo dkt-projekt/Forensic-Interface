@@ -10,7 +10,7 @@
 <?php
 /*        $data = array(
         );
-	$result = CallAPI2("GET", "http://dev.digitale-kuratierung.de/api/e-pipelining", $data);
+	$result = CallAPI2("GET", "https://dev.digitale-kuratierung.de/api/e-pipelining", $data);
         $json = json_decode($result);
 
 //var_dump($json);

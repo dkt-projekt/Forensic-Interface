@@ -11,7 +11,7 @@
         $data = array(
         );
 
-	$result = CallAPI2("DELETE", "http://dev.digitale-kuratierung.de/api/data-backend/".$collectionId, $data);
+	$result = CallAPI2("DELETE", "https://dev.digitale-kuratierung.de/api/data-backend/".$collectionId, $data);
 	$errormessage = '';
 	if(strpos($result,"successfully")==false){
 		$errormessage = 'Error at deleting the collection:<br/>'.$result;

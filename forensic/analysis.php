@@ -31,7 +31,7 @@ if(strpos($analysis,'sent')!==false){
 //                'language' => 'en',
 //                'user' => 'jmschnei'
         );
-	$result = CallAPI2("GET", "http://dev.digitale-kuratierung.de/api/e-parrot/listmodels", $data);
+	$result = CallAPI2("GET", "https://dev.digitale-kuratierung.de/api/e-parrot/listmodels", $data);
         $json = json_decode($result);
 
 //var_dump($json);

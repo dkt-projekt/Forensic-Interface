@@ -25,7 +25,7 @@
 <script src="serviceCalls.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	var url = 'https://dev.digitale-kuratierung.de/forin/forensic/';
+	var url = 'https://dev.digitale-kuratierung.de/Forensic-Interface/forensic/';
 
         $('#collectionMenuList li a').click(function(e) { 
                 e.preventDefault();
@@ -43,7 +43,7 @@ $(document).ready(function() {
         });
 
 //	document.getElementById('dashboard').click();
-	$('#main-content').load('https://dev.digitale-kuratierung.de/forin/forensic/dashboard.html');
+	$('#main-content').load('https://dev.digitale-kuratierung.de/Forensic-Interface/forensic/dashboard.html');
 });
 </script>
 

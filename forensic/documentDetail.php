@@ -50,7 +50,7 @@
 //                $('body').removeClass("loading");
 	});
 
-        $('#main-content').load('https://dev.digitale-kuratierung.de/forin/forensic/documentHighContent.html');
+        $('#main-content').load('https://dev.digitale-kuratierung.de/Forensic-Interface/forensic/documentHighContent.html');
 */
       });    
     </script>

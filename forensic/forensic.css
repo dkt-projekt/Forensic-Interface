@@ -379,7 +379,17 @@ xmp {
 //    background-color: #C2C2C3;
 }
 
+#high-content, #nif-content{
+	background-color: white;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    margin: 20px;
+}
 
+.pointer:hover{
+	cursor: pointer;
+}
 
-
-
+.hub ul{
+	list-style-type: none;
+}

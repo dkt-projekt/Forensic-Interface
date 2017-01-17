@@ -4,7 +4,12 @@
         require_once('lib2.php');
 
 //	$user = getSession("forensicUser","");
-	$collectionId = getSession('forensicCollectionId','');
+
+	$collectionId = getForm("collection");
+	if(empty($collectionId)){
+		$collectionId = getSession('forensicCollectionId','');
+	}
+	
 	$documentId = getForm('documentId','');
 	$documentName = getForm('documentName','');
 
@@ -12,12 +17,58 @@
 
 ?>
 <body>
+<div id="test"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+    var collectionName = '<?php echo $collectionId;?>';
+    
+    SemanticStoryTelling = {
+		init: function(selector){
+			var that = this;
+			selector.find("span.label-success, span.label-warning, span.label-info")
+				.addClass("pointer").click(function(){
+				that.loadAuthorities($(this));
+			});
+		},
+
+		loadAuthorities: function(annotation){
+			var label = annotation.html();
+			labelEncoded = encodeURIComponent(label);
+			var url = "https://dev.digitale-kuratierung.de/api/data-backend/" + 
+				collectionName + "/authorities/api/load-authorities?text=" + labelEncoded;
+			var that = this;
+			$.get(url, function(data){
+				that.showAuthoritiesDialog(label, data);
+			});
+		},
+
+		showAuthoritiesDialog: function(label, data){
+			console.log(data);
+			var div = $("<div>").addClass("hub").appendTo($("body"));
+			var ul = $("<ul>").appendTo(div);
+			for( var i=0; i<data.length; i++ ){
+				var li = $("<li>").appendTo(ul);
+				var link = data[i];
+				var text = link.doc + " (" + link.count + " occurences)";
+				var url = "https://dev.digitale-kuratierung.de/Forensic-Interface/forensic/documentDetail.php?documentId=" 
+					+ encodeURIComponent(link.doc);
+					+ "&collection=" + collectionName;
+				$("<a>").attr("href", url).html(text).appendTo(li);
+			}
+			div.dialog({
+				title: "Hub for " + label,
+				width: 500
+			});
+		}
+    }
+
+    
       $(document).ready(function() {
                 $('body').addClass("loading");
-                var collectionName = '<?php echo $collectionId;?>';
                 var userId = '<?php echo $userId;?>';
                 var documentId = '<?php echo $documentId;?>';
                 var documentName = '<?php echo $documentName;?>';
@@ -27,10 +78,14 @@
                 posting.done(function( data ) {
 //			alert(data);
 		        var resultData = JSON.parse(data);
-                        $('#high-content').html(resultData.highcontent+"                                        <div class=\"col-lg-12 col-md-12\"><span class=\"label label-default\">Other</span><span></span><span class=\"label label-primary\">Temporal Expresions</span><span></span><span class=\"label label-success\">Person</span><span></span><span class=\"label label-info\">Organisation</span><span></span><span class=\"label label-warning\">Location</span><span></span><!--<span class=\"label label-danger\">Danger Label</span>--></div>");
+					var text = resultData.highcontent;
+					text = text.replace( new RegExp("\\r\\n", 'g'), "<br/>\r\n");
+					$('#high-content').html(text+"                                        <div class=\"col-lg-12 col-md-12\"><span class=\"label label-default\">Other</span><span></span><span class=\"label label-primary\">Temporal Expresions</span><span></span><span class=\"label label-success\">Person</span><span></span><span class=\"label label-info\">Organisation</span><span></span><span class=\"label label-warning\">Location</span><span></span><!--<span class=\"label label-danger\">Danger Label</span>--></div>");
                         $('#nif-content').html("<xmp>"+resultData.nifcontent+"</xmp>");
-                        alert("<pre>"+resultData.nifcontent+"</pre>");
+                        //alert("<pre>"+resultData.nifcontent+"</pre>");
                         $('body').removeClass("loading");
+
+                    SemanticStoryTelling.init($("#high-content"));
                 });
                 posting.fail(function(xhr,status,error){
                         alert(status);
@@ -94,9 +149,9 @@ require_once("header.php");
   <div class="row" style="margin:0;">
     <div class="col-lg-12 col-md-12 col-sm-12" id="main-content" style="margin:0;padding:0px;">
     	<div class="row" style="margin:0;">
-    		<div class="col-lg-6 col-md-6 col-sm-12" id="high-content" style="margin:0;padding:0px;">
+    		<div class="col-lg-6 col-md-6 col-sm-12" id="high-content">
     		</div>
-    		<div class="col-lg-6 col-md-6 col-sm-12" id="nif-content" style="margin:0;padding:0px;">
+    		<div class="col-lg-6 col-md-6 col-sm-12" id="nif-content">
     		</div>
     	</div>
     </div>
